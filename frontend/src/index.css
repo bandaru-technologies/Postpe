@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-page-bg text-white font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyan-600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-accent text-navy-900 font-semibold rounded-lg hover:bg-cyan-400 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-navy-600 text-white font-semibold rounded-lg border border-navy-500 hover:border-accent hover:text-accent active:scale-95 transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-gray-400 font-medium rounded-lg hover:bg-navy-600 hover:text-white active:scale-95 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-card-bg rounded-xl border border-navy-500 hover:border-accent/30 transition-all duration-300 shadow-card hover:shadow-card-hover;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-navy-800 border border-navy-500 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-300 mb-1.5;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-white;
+  }
+
+  .section-subtitle {
+    @apply text-gray-400 mt-2;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent/10 text-accent border border-accent/20;
+  }
+
+  .badge-success {
+    @apply badge bg-green-500/10 text-green-400 border border-green-500/20;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-500/10 text-yellow-400 border border-yellow-500/20;
+  }
+
+  .link {
+    @apply text-accent hover:text-cyan-400 transition-colors duration-200;
+  }
+
+  .skeleton {
+    @apply bg-navy-600 animate-pulse rounded;
+  }
+
+  .glass {
+    @apply bg-navy-800/60 backdrop-blur-md border border-navy-600/50;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
